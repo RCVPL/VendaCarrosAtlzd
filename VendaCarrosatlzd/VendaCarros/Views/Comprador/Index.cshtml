@@ -1,0 +1,50 @@
+@model IEnumerable<VendaCarros.Models.Comprador>
+
+@{
+    ViewData["Title"] = "Comprador";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if(Model.Count() == 0)
+{
+    <p>Nenhum cliente cadastrado.</p>
+    
+   <a class="btn btn-outline-success" asp-controller="Comprador" asp-action="Create">Adicionar</a>
+} 
+else 
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Modelo</th>
+                <th>Valor</th>  
+                <th>Endereço</th>              
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var comprador in Model)
+            {
+                <tr>
+                    <td>@comprador.Id</td>
+                    <td>@comprador.Nome</td>
+                    <td>@comprador.CPF</td>
+                    <td>@comprador.Modelo</td>
+                    <td>@comprador.Valor</td>
+                    <td>@comprador.Endereco</td>
+                    <td>
+                        <a class="btn btn-outline-primary" asp-controller="Comprador" asp-action="Show" asp-route-id="@comprador.Id">Ver</a> 
+                        <a class="btn btn-outline-warning" asp-controller="Comprador" asp-action="Update" asp-route-id="@comprador.Id">Atualizar</a>      
+                        <a class="btn btn-outline-danger" asp-controller="Comprador" asp-action="Delete" asp-route-id="@comprador.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-outline-success" asp-controller="Comprador" asp-action="Create">Adicionar</a>
+    
+}

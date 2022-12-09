@@ -1,0 +1,43 @@
+@model VendaCarros.Models.Comprador
+
+@{
+    ViewData["Title"] = "Atualizar Cliente";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Utilize o formulário abaixo para atualizar os dados do cliente e sua compra!</p>
+
+    <form method="post">
+        <p>
+            <label for="id"><strong>Id:</strong></label>
+            <input type="text" name="id" id="id">
+            <span asp-validation-for="Id" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="nome"><strong>Nome: </strong></label>
+            <input type="text" name="nome" id="nome">
+            <span asp-validation-for="Nome" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="cpf"><strong>CPF: </strong></label>
+            <input type="text" name="cpf" id="cpf">
+            <span asp-validation-for="CPF" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="modelo"><strong>Modelo do Carro: </strong></label>
+            <input type="text" name="modelo" id="modelo">
+            <span asp-validation-for="Modelo" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="valor"><strong>Valor do Carro: </strong></label>
+            <input type="text" name="valor" id="valor">
+            <span asp-validation-for="Valor" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="endereco"><strong>Endereço: </strong></label>
+            <input type="text" name="endereco" id="endereco">
+            <span asp-validation-for="Endereco" class="text-danger" ></span>
+        </p>
+
+        <button asp-controller="Comprador" asp-action="Update" class="btn btn-outline-success">Atualizar</button>
+    </form>

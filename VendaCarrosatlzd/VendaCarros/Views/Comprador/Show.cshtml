@@ -1,0 +1,13 @@
+@model VendaCarros.Models.Comprador
+
+@{
+    ViewData["Title"] = $"Comprador: {Model.Nome}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Id: @Model.Id </p>
+<p>Nome: @Model.Nome</p>
+<p>CPF: @Model.CPF</p>
+<p>Modelo: @Model.Modelo</p>
+<p>Valor: @Model.Valor</p>
+<p>Endereço: @Model.Endereco</p>

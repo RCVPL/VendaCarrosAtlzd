@@ -1,0 +1,38 @@
+@model VendaCarros.Models.Carro
+
+@{
+    ViewData["Title"] = "Atualizar Carro";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Utilize o formulário abaixo para atualizar um carro!</p>
+
+    <form method="post">
+        <p>
+            <label for="id"><strong>Id:</strong></label>
+            <input type="text" name="id" id="id">
+            <span asp-validation-for="Id" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="placa"><strong>Placa: </strong></label>
+            <input type="text" name="placa" id="placa">
+            <span asp-validation-for="Placa" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="ano"><strong>Ano: </strong></label>
+            <input type="text" name="ano" id="ano">
+            <span asp-validation-for="Ano" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="modelo"><strong>Modelo do Carro: </strong></label>
+            <input type="text" name="modelo" id="modelo">
+            <span asp-validation-for="Modelo" class="text-danger" ></span>
+        </p>
+        <p>
+            <label for="marca"><strong>Marca: </strong></label>
+            <input type="text" name="marca" id="marca">
+            <span asp-validation-for="Marca" class="text-danger" ></span>
+        </p>
+
+        <button asp-controller="Carro" asp-action="Update" class="btn btn-outline-success">Atualizar</button>
+    </form>
